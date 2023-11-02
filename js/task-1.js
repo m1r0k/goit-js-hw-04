@@ -1,17 +1,12 @@
 function isEnoughCapacity(products, containerSize) {
-    const sumOfProducts = 0;
-    for (let product of products) {
-        if (product.name === productName) {
-            product.value 
-        }
-        return sumOfProducts;
+  let totalProducts = 0;
+  for (let quantity of Object.values(products)) {
+    totalProducts += quantity;
+    if (totalProducts > containerSize) {
+      return false;
     }
-    if (sumOfProducts <= containerSize) {
-        return true;
-    } else {
-        return false;
-    }
-  return `Product ${productName} not found!`;
+  }
+  return true;
 }
 console.log(
   isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
@@ -28,19 +23,3 @@ console.log(
 console.log(
   isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)
 ); // false
-
-
-function calculateTotalPrice(productName) {
-  const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1200, quantity: 9 },
-  ];
-  for (let product of products) {
-    if (product.name === productName) {
-      return product.price * product.quantity;
-    }
-  }
-  return `Product ${productName} not found!`;
-}
